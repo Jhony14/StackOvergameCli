@@ -9,7 +9,7 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component'
 import { ErrorComponent } from './components/error/error.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'post', component: PostComponent },
   { path: 'comentarios', component: ComentariosComponent },

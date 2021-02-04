@@ -3,7 +3,7 @@
 </div>
 <nav class="mx-auto navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="home">Inicio</a>
+    <a class="navbar-brand" routerLinkActive="active" routerLink="home">Stack Overgame</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,22 +11,23 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="post">Post</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="post">Post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="usuarios">Usuarios</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="usuarios">Usuarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="auth">Login</a>
+          <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="auth">Login</a>
         </li>
         <li class="nav-item dropdown d-flex">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+            aria-expanded="false" *ngIf="service.Correo">
             {{service.Correo}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="No found">Editar perfil</a></li> <!--cambiar enlace-->
-            <li><a class="dropdown-item" href="auth">Logout</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="No found">Editar perfil</a></li>
+            <!--cambiar enlace-->
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="auth">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -35,3 +36,17 @@
 </nav>
 
 <router-outlet></router-outlet>
+
+<footer class="footer mt-auto py-5 fixed-bottom">
+  <div class="container text-center">
+    <div class="card">
+      <div class="card-body">
+        <span class="text-muted">Stack Overgame &copy; MIT licensed BY Jhonatan Arteaga, 2021</span>
+        <span class="text-muted">
+          <a href="https://github.com/rafaelaznar/TrolleyesAngularJSClient"> CLIENT</a>
+          <a href="https://github.com/Jhony14/StackOvergameServer"> SERVER</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>

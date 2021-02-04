@@ -67,7 +67,7 @@ export class SharedService {
   private updateData(token) {
     this.token = token;
     this.errors = [];
-
+    localStorage.setItem('token', this.token);
     // decode the token to read the username and expiration timestamp
     const token_parts = this.token.split(/\./);
     const token_decoded = JSON.parse(window.atob(token_parts[1]));

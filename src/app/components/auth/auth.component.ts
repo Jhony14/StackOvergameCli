@@ -46,6 +46,7 @@ export class AuthComponent implements OnInit {
   logout() {
     this.service.logout();
     localStorage.removeItem('usuario');
+    localStorage.removeItem('token');
   }
 
 }
