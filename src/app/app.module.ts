@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';    // add this
-import { FormsModule } from '@angular/forms';    // add this
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { SharedService } from './service/shared.service'
+import { SharedService } from './service/shared.service';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SharedService } from './service/shared.service'
     AuthComponent,
     UsuariosComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,10 @@ import { SharedService } from './service/shared.service'
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SharedService],
+  providers: [
+    SharedService,
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

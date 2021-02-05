@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from "ngx-cookie-service";
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class SharedService {
   //Datos de usuarios
   public datoUsuario: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cookies: CookieService) {
     this.httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
@@ -58,10 +59,19 @@ export class SharedService {
     );
   }
 
+  // Cookies para mantener sesion
+  setToken(token: any) {
+    this.cookies.set("token", token);
+  }
+  getToken() {
+    return this.cookies.get("token");
+  }
+
   public logout() {
     this.token = null;
     this.token_expires = null;
     this.Correo = null;
+    this.cookies.delete("token");
   }
 
   private updateData(token) {

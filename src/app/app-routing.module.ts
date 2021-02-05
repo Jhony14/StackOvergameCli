@@ -7,6 +7,7 @@ import { ComentariosComponent } from './components/post/comentarios/comentarios.
 import { AuthComponent } from './components/auth/auth.component'
 import { UsuariosComponent } from './components/usuarios/usuarios.component'
 import { ErrorComponent } from './components/error/error.component'
+import { RegisterComponent } from './components/auth/register/register.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'comentarios', component: ComentariosComponent },
   { path: 'auth', component: AuthComponent },
   { path: 'usuarios', component: UsuariosComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: ErrorComponent },
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SharedService } from 'src/app/service/shared.service'
 import { throwError } from 'rxjs'
@@ -15,7 +16,7 @@ export class AuthComponent implements OnInit {
   //Datos de usuarios
   public datoUsuario: any;
 
-  constructor(public service: SharedService) { }
+  constructor(public service: SharedService, public router: Router) { }
 
   ngOnInit(): void {
     this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
@@ -37,16 +38,20 @@ export class AuthComponent implements OnInit {
     this.service.login({ 'Correo': this.user.Correo, 'password': this.user.password });
     localStorage.setItem('usuario', JSON.stringify(this.user));
     this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
+    this.service.setToken(this.service.token); //Coockies
+    this.router.navigateByUrl('home');
   }
 
   refreshToken() {
     this.service.refreshToken();
+    this.router.navigateByUrl('home');
   }
 
   logout() {
     this.service.logout();
     localStorage.removeItem('usuario');
     localStorage.removeItem('token');
+    this.router.navigateByUrl('home');
   }
 
 }

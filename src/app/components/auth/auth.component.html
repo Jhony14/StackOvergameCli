@@ -1,34 +1,33 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <form role="form" class="mt-5 center-block">
-      <div *ngIf="!service.token">
-        <div class="form-group">
-          <label class="col-4">Correo:</label>
-          <input class="col-8" type="email" name="login-username" [(ngModel)]="user.Correo" autofocus required>
-          <span *ngFor="let error of service.errors.Correo"><br />
-            {{ error }}</span>
-        </div>
-        <div class="form-group">
-          <label class="col-4">Contraseña:</label>
-          <input class="col-8" type="password" name="login-password" [(ngModel)]="user.password" required>
-          <span *ngFor="let error of service.errors.password"><br />
-            {{ error }}</span>
-        </div>
-        <div>
-          <span *ngFor="let error of service.errors.non_field_errors">{{ error }}<br /></span>
-        </div>
-
-        <button (click)="login()" class="btn btn-primary col-5 m-2">Iniciar
-          sesion</button>
+<div class="row justify-content-center">
+  <form role="form" class="mt-5 center-block">
+    <div *ngIf="!service.token">
+      <div class="form-group">
+        <label class="col-4">Correo:</label>
+        <input class="col-8" type="email" name="login-username" [(ngModel)]="user.Correo" autofocus required>
+        <span *ngFor="let error of service.errors.Correo"><br />
+          {{ error }}</span>
       </div>
-      <div class="row" *ngIf="service.token">
-        <div><label class="col-12">¿Desea cerrar sesion?</label></div>
-        <button (click)="logout()" class="btn btn-primary col-5 m-2">Log Out</button>
+      <div class="form-group">
+        <label class="col-4">Contraseña:</label>
+        <input class="col-8" type="password" name="login-password" [(ngModel)]="user.password" required>
+        <span *ngFor="let error of service.errors.password"><br />
+          {{ error }}</span>
       </div>
+      <div>
+        <span *ngFor="let error of service.errors.non_field_errors">{{ error }}<br /></span>
+      </div>
+      <a href="register" class=""><small>¿No tienes una cuenta? Regístrate</small></a>
+      <button (click)="login()" class="btn btn-primary col-5 m-2 float-right">Iniciar
+        sesion</button>
+    </div>
+    <div class="row" *ngIf="service.token">
+      <div><label class="col-12">¿Desea cerrar sesion?</label></div>
+      <button (click)="logout()" class="btn btn-primary col-5 m-2">Log Out</button>
+    </div>
 
-    </form>
-  </div>
+  </form>
 </div>
+
 
 <!--
 <div class="container">
