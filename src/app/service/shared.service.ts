@@ -88,8 +88,12 @@ export class SharedService {
     this.Correo = token_decoded.Correo;
   }
 
-  getPost(): Observable<any[]> {
+  getPostList(): Observable<any[]> {
     return this.http.get<any[]>(this.APIUrl + '/postList/');
+  }
+
+  getPost(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/post/' + id);
   }
 
 

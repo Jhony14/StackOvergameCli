@@ -10,19 +10,23 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class PostComponent implements OnInit {
 
-  constructor(public service: SharedService, public router: Router) { }
-
   PostList: any = [];
+  public page: number;
+  
+  constructor(public service: SharedService, public router: Router) { }
 
   ngOnInit(): void {
     this.refreshPostList();
   }
 
   refreshPostList() {
-    this.service.getPost().subscribe(data => {
+    this.service.getPostList().subscribe(data => {
       this.PostList = data;
       console.log(data);
-    });
+    }, error => {
+      console.log(error);
+    }
+    );
   }
 
 }

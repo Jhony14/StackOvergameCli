@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ReactiveFormsModule } from '@angular/forms'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { SharedService } from './service/shared.service';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ShowPostComponent } from './components/post/show-post/show-post.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { ShowPostComponent } from './components/post/show-post/show-post.compone
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgxPaginationModule,
   ],
   providers: [
     SharedService,

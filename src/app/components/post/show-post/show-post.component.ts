@@ -11,11 +11,24 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class ShowPostComponent implements OnInit {
 
+  PostId: number;
+  PostData: any = [];
+
   constructor(public service: SharedService, public router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id:number = +this.activatedroute.snapshot.paramMap.get('id');
-    console.log(id);
+    this.PostId = +this.activatedroute.snapshot.paramMap.get('id');
+    this.refreshPost();
+  }
+
+  refreshPost() {
+    this.service.getPost(this.PostId).subscribe(data => {
+      this.PostData = data;
+      console.log(data);
+    }, error => {
+      console.log(error);
+    }
+    );
   }
 
 }

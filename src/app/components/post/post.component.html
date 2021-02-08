@@ -1,9 +1,10 @@
 <div class="container">
-    <table class="table table-striped" *ngFor="let dataitem of PostList">
+    <table class="table table-striped" *ngFor="let dataitem of PostList | paginate: { itemsPerPage: 5, currentPage: page }">
         <tr>
             <td>
                 <a [routerLink]="['/show-post',dataitem.PostId]">{{dataitem.PostTitulo}}</a>
             </td>
         </tr>
     </table>
+    <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 </div>

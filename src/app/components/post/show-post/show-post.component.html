@@ -1,1 +1,12 @@
-<p>show-post works!</p>
+<div class="container">
+    <table class="table table-bordered" *ngFor="let item of PostData">
+        <tr>
+            <td>{{item.PostTitulo}}</td>
+        </tr>
+        <tr>
+            <td>{{item.PostContenido}}</td>
+        </tr>
+    </table>
+
+    <app-comentarios></app-comentarios>
+</div>
