@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   constructor(public service: SharedService) { }
 
   ngOnInit(): void {
-    console.log(this.service.Correo);
   }
 
 }

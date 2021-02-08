@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 
 import { SharedService } from 'src/app/service/shared.service'
 import { throwError } from 'rxjs'
@@ -26,7 +27,9 @@ export class AuthComponent implements OnInit {
         password: ''
       };
     } else {
-      this.service.login({ 'Correo': this.datoUsuario.Correo, 'password': this.datoUsuario.password });
+      if (!this.service.errors) {
+        this.service.login({ 'Correo': this.datoUsuario.Correo, 'password': this.datoUsuario.password });
+      }
       this.user = {
         Correo: '',
         password: ''
@@ -34,12 +37,22 @@ export class AuthComponent implements OnInit {
     }
   }
 
+  //Validator
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+  })
+
+  get email() { return this.loginForm.get('email') }
+
   login() {
     this.service.login({ 'Correo': this.user.Correo, 'password': this.user.password });
-    localStorage.setItem('usuario', JSON.stringify(this.user));
-    this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
-    this.service.setToken(this.service.token); //Coockies
-    this.router.navigateByUrl('home');
+    if (!this.service.errors) {
+      localStorage.setItem('usuario', JSON.stringify(this.user));
+      this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
+      this.service.setToken(this.service.token); //Coockies
+      this.router.navigateByUrl('home');
+    }
+
   }
 
   refreshToken() {

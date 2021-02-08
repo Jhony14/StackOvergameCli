@@ -1,1 +1,9 @@
-<p>post works!</p>
+<div class="container">
+    <table class="table table-striped" *ngFor="let dataitem of PostList">
+        <tr>
+            <td>
+                <a [routerLink]="['/show-post',dataitem.PostId]">{{dataitem.PostTitulo}}</a>
+            </td>
+        </tr>
+    </table>
+</div>

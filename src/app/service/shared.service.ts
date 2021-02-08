@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { CookieService } from "ngx-cookie-service";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -85,5 +87,10 @@ export class SharedService {
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.Correo = token_decoded.Correo;
   }
+
+  getPost(): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/postList/');
+  }
+
 
 }

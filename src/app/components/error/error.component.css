@@ -218,8 +218,8 @@
     background-color: #abe7db;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: top;
+    height: 120vh;
 }
 
 .main {
@@ -373,4 +373,14 @@
 .whisker:last-child {
     top: 0;
     transform: rotate(-20deg);
+}
+
+@media screen and (max-width: 800px) {
+    h1{
+        font-size: 45px;
+    }
+
+    .cat, .stand{
+        display: none;
+    }
 }

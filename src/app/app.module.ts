@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { SharedService } from './service/shared.service';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ShowPostComponent } from './components/post/show-post/show-post.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { RegisterComponent } from './components/auth/register/register.component
     HomeComponent,
     ErrorComponent,
     RegisterComponent,
+    ShowPostComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     SharedService,
