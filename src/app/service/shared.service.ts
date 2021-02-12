@@ -36,7 +36,7 @@ export class SharedService {
   }
 
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
-  public login(user) {
+  public login(user): Observable<any> {
     this.http.post(this.APIUrl + '/api-token-auth/', JSON.stringify(user), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
@@ -47,6 +47,7 @@ export class SharedService {
         console.log(err);
       }
     );
+    return this.http.post(this.APIUrl + '/api-token-auth/', JSON.stringify(user), this.httpOptions)
   }
 
   // Refreshes the JWT token, to extend the time the user is logged in
@@ -94,6 +95,17 @@ export class SharedService {
 
   getPost(id: number): Observable<any[]> {
     return this.http.get<any[]>(this.APIUrl + '/post/' + id);
+  }
+
+  getUsuario(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/usuario/' + id);
+  }
+  getComentarios(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/comentarios/' + id);
+  }
+
+  addUsuario(val: any) {
+    return this.http.post(this.APIUrl + '/admin/stackovergameApp/usuario/add/w', val);
   }
 
 

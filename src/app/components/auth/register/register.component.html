@@ -19,14 +19,17 @@
             </div>
             <div class="form-group">
                 <label class="col-4">Contraseña:</label>
-                <input class="col-8" type="password" name="register-password" [(ngModel)]="user.password" required>
+                <input class="col-8" type="password" name="register-password" [(ngModel)]="user.password1" required>
+            </div>
+            <div class="form-group">
+                <label class="col-4">Vuelva a introducir la contraseña:</label>
+                <input class="col-8" type="password" name="register-password" [(ngModel)]="user.password2" required>
             </div>
             <div class="form-group">
                 <label class="col-4">Foto de perfil:</label>
-                <input class="col-8" type="file" name="register-imagen" [(ngModel)]="user.Nombre" required>
+                <input class="col-8" type="file" name="register-imagen" [(ngModel)]="user.Imagenperfil" required>
             </div>
-            <button (click)="register()" [disabled]=""
-                class="btn btn-primary col-5 m-2 float-right">Registrarse</button>
+            <button (click)="register()" class="btn btn-primary col-5 m-2 float-right">Registrarse</button>
         </div>
     </form>
 </div>

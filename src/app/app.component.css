@@ -3,6 +3,7 @@
     background: none;
 }
 
+
 .jumbotron:after {
     content: "";
     display: block;
@@ -42,4 +43,7 @@
     .jumbotron h1 {
         display: none;
     }
+
+
 }
+
