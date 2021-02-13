@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SharedService } from 'src/app/service/shared.service'
-
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-edit-show-user',
+  templateUrl: './edit-show-user.component.html',
+  styleUrls: ['./edit-show-user.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class EditShowUserComponent implements OnInit {
 
   public user: any;
 
@@ -19,9 +18,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
-    /*if (this.service.getToken != null) {
+    if (this.service.getToken != null) {
       this.router.navigateByUrl('home');
-    }*/
+    }
 
     this.user = {
       Correo: 'jhonyp',
@@ -47,16 +46,16 @@ export class RegisterComponent implements OnInit {
       };
 
       this.service.addUsuario(user).subscribe(data => {
-        //   console.log(data);
+        console.log(data);
         console.log("añadido");
-      }, error => {
-        console.log("****ERRORES*******")
-        console.log(error.error);
       });
       console.log("enviado");
       console.log(user)
     } else {
-      console.log("las contraseñas no son iguales")
+      console.log("las contrase;as no son iguales")
     }
+
+
   }
+
 }

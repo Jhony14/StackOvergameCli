@@ -19,6 +19,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { SharedService } from './service/shared.service';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ShowPostComponent } from './components/post/show-post/show-post.component';
+import { InformesComponent } from './components/informes/informes.component';
+import { EditShowUserComponent } from './components/usuarios/edit-show-user/edit-show-user.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { ShowPostComponent } from './components/post/show-post/show-post.compone
     ErrorComponent,
     RegisterComponent,
     ShowPostComponent,
+    InformesComponent,
+    EditShowUserComponent,
   ],
   imports: [
     BrowserModule,

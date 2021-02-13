@@ -1,8 +1,9 @@
-<table class="table table-bordered"
-    *ngFor="let item of comentarioData | paginate: { itemsPerPage: 7, currentPage: page }">
-    <tr>
+<table class="table table-bordered">
+    <tr *ngFor="let item of comentarioData | paginate: { itemsPerPage: 7, currentPage: page }">
         <td>{{item.ComentariosContenido}}</td>
-        <td>{{item.ComentariosFechaComentario}} By: <p [(ngModel)]="usuarioId">{{item.ComentariosUsuarioId}}</p></td>
+        <td>{{item.ComentariosFechaComentario}} By:
+            <p [(ngModel)]="usuarioId">{{item.ComentariosUsuarioId}}</p>
+        </td>
     </tr>
 </table>
 <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

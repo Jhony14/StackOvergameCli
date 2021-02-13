@@ -1,6 +1,6 @@
 <div class="container">
-    <table class="table table-striped" *ngFor="let dataitem of PostList | paginate: { itemsPerPage: 7, currentPage: page }">
-        <tr>
+    <table class="table table-bordered">
+        <tr *ngFor="let dataitem of PostList | paginate: { itemsPerPage: 7, currentPage: page }">
             <td>
                 <a [routerLink]="['/show-post',dataitem.PostId]">{{dataitem.PostTitulo}}</a>
             </td>

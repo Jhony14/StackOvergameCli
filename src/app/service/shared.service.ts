@@ -100,12 +100,17 @@ export class SharedService {
   getUsuario(id: number): Observable<any[]> {
     return this.http.get<any[]>(this.APIUrl + '/usuario/' + id);
   }
+
+  getUsuarioList(): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/usuarioAll/');
+  }
+
   getComentarios(id: number): Observable<any[]> {
     return this.http.get<any[]>(this.APIUrl + '/comentarios/' + id);
   }
 
   addUsuario(val: any) {
-    return this.http.post(this.APIUrl + '/admin/stackovergameApp/usuario/add/w', val);
+    return this.http.post(this.APIUrl + '/users/', val);
   }
 
 

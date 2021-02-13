@@ -1,0 +1,17 @@
+<div class="container">
+    <div id="htmlData">
+        <table class="table table-bordered">
+            <tr>
+                <td>Nombre</td>
+                <td>Primer apellido</td>
+                <td>Segundo apellido</td>
+            </tr>
+            <tr *ngFor="let item of userList">
+                <td>{{item.Nombre}}</td>
+                <td>{{item.Apellido1}}</td>
+                <td>{{item.Apellido2}}</td>
+            </tr>
+        </table>
+    </div>
+    <button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">Download PDF</button>
+</div>
