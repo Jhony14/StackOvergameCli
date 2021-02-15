@@ -1,0 +1,15 @@
+<div class="form-group row">
+    <label class="col-sm-2 col-form-form-label">Título de la publicación</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="PostTitulo"
+            placeholder="Introduce el título de la publicación">
+    </div>
+    <label class="col-sm-2 col-form-form-label">Contenido de la publicación</label>
+    <div class="col-sm-10">
+        <textarea name="PostContenido" class="form-control" [(ngModel)]="PostContenido"
+            placeholder="Introduce el contenido de la publicación" cols="30" rows="10"></textarea>
+    </div>
+</div>
+
+<button (click)="addPost()" *ngIf="post.PostId==0" class="btn btn-primary">Añadir</button>
+<button (click)="updatePost()" *ngIf="post.PostId!=0" class="btn btn-primary">Editar</button>

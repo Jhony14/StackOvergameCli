@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
-    if (this.datoUsuario != null && !this.service.errors) {
+    if (this.datoUsuario != null) {
       this.service.login({ 'Correo': this.datoUsuario.Correo, 'password': this.datoUsuario.password });
     }
   }

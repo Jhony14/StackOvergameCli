@@ -1,9 +1,52 @@
-<table class="table table-bordered">
-    <tr *ngFor="let item of comentarioData | paginate: { itemsPerPage: 7, currentPage: page }">
-        <td>{{item.ComentariosContenido}}</td>
-        <td>{{item.ComentariosFechaComentario}} By:
-            <p [(ngModel)]="usuarioId">{{item.ComentariosUsuarioId}}</p>
-        </td>
-    </tr>
-</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+    (click)="addComentario()" data-backdrop="static" data-keyboard="false">
+    Añadir comentario <i class="bi bi-plus"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-add-edit-comentarios [comentario]="comentario" *ngIf="ActivateAddEditComentario">
+                </app-add-edit-comentarios>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Comentario</th>
+                <th>Fecha del comentario</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of comentarioData | paginate: { itemsPerPage: 7, currentPage: page }">
+                <td>{{item.ComentariosContenido}}</td>
+                <td>{{item.ComentariosFechaComentario}} </td>
+                <td>
+                    <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
+                        (click)="editComentario(item)" data-backdrop="static" data-keyboard="false"><i
+                            class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" (click)="deleteComentario(item.ComentariosId)" class=" btn btn-primary p-1 m-1">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

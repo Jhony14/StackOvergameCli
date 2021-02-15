@@ -23,13 +23,13 @@ export class EditShowUserComponent implements OnInit {
     }
 
     this.user = {
-      Correo: 'jhonyp',
-      password1: 'm326895741',
-      password2: 'm326895741',
-      Nombre: 'prueba Jhony',
-      Apellido1: 'OwO',
-      Apellido2: 'OwO',
-      Imagenperfil: '',
+      Correo: '',
+      password1: '',
+      password2: '',
+      Nombre: '',
+      Apellido1: '',
+      Apellido2: '',
+      Imagenperfil: null,
     }
 
   }

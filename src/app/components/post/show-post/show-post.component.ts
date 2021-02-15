@@ -24,6 +24,7 @@ export class ShowPostComponent implements OnInit {
   refreshPost() {
     this.service.getPost(this.PostId).subscribe(data => {
       this.PostData = data;
+      console.log(data)
     }, error => {
       console.log(error);
     });

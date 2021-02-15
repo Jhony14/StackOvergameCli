@@ -6,6 +6,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { ReactiveFormsModule } from '@angular/forms'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FileUploadModule } from 'ng2-file-upload';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +23,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { ShowPostComponent } from './components/post/show-post/show-post.component';
 import { InformesComponent } from './components/informes/informes.component';
 import { EditShowUserComponent } from './components/usuarios/edit-show-user/edit-show-user.component';
+import { AddEditPostComponent } from './components/post/add-edit-post/add-edit-post.component';
+import { AddEditComentariosComponent } from './components/post/add-edit-comentarios/add-edit-comentarios.component';
 
 
 @NgModule({
@@ -37,6 +41,8 @@ import { EditShowUserComponent } from './components/usuarios/edit-show-user/edit
     ShowPostComponent,
     InformesComponent,
     EditShowUserComponent,
+    AddEditPostComponent,
+    AddEditComentariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,7 @@ import { EditShowUserComponent } from './components/usuarios/edit-show-user/edit
     ReactiveFormsModule,
     NgbModule,
     NgxPaginationModule,
+    FileUploadModule,
   ],
   providers: [
     SharedService,

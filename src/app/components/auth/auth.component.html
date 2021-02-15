@@ -1,9 +1,11 @@
 <div class="top row justify-content-center">
-  <form role="form" class="mt-5 center-block">
+  <form [formGroup]="formularioLogin" novalidate role="form" class="mt-5 center-block">
     <div *ngIf="!service.token">
       <div class="form-group">
         <label class="col-4">Correo:</label>
-        <input class="col-8" type="email" name="login-username" [(ngModel)]="user.Correo" autofocus required>
+        <input class="col-8" type="email" name="login-username" [(ngModel)]="user.Correo" autofocus
+        [class.is-invalid]="formularioLogin.get('login')!.touched && formularioLogin.get('login')!.invalid"
+        type="text" formControlName="login">
         <span *ngFor="let error of service.errors.Correo"><br />
           {{ error }}</span>
       </div>

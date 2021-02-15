@@ -29,6 +29,8 @@ export class SharedService {
   //Datos de usuarios
   public datoUsuario: any;
 
+  public userId: any;
+
   constructor(private http: HttpClient, private cookies: CookieService) {
     this.httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -77,7 +79,8 @@ export class SharedService {
     this.cookies.delete("token");
   }
 
-  private updateData(token) {
+  public updateData(token) {
+    console.log(token);
     this.token = token;
     this.errors = [];
     localStorage.setItem('token', this.token);
@@ -87,6 +90,8 @@ export class SharedService {
     console.log(token_decoded);
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.Correo = token_decoded.Correo;
+    console.log(token_decoded.user_id);
+    this.userId = token_decoded.user_id;
   }
 
   getPostList(): Observable<any[]> {
@@ -95,6 +100,18 @@ export class SharedService {
 
   getPost(id: number): Observable<any[]> {
     return this.http.get<any[]>(this.APIUrl + '/post/' + id);
+  }
+
+  addPost(val: any) {
+    return this.http.post(this.APIUrl + '/post/', val);
+  }
+
+  updatePost(val: any) {
+    return this.http.put(this.APIUrl + '/post/', val);
+  }
+
+  deletePost(id: number) {
+    return this.http.delete(this.APIUrl + '/post/' + id);
   }
 
   getUsuario(id: number): Observable<any[]> {
@@ -109,8 +126,22 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl + '/comentarios/' + id);
   }
 
+  addComentarios(val: any) {
+    return this.http.post(this.APIUrl + '/comentarios/', val);
+  }
+
+  updateComentarios(val: any) {
+    return this.http.put(this.APIUrl + '/comentarios/', val);
+  }
+
+  deleteComentarios(id: number) {
+    return this.http.delete(this.APIUrl + '/comentarios/' + id);
+  }
+
+
+
   addUsuario(val: any) {
-    return this.http.post(this.APIUrl + '/users/', val);
+    return this.http.post(this.APIUrl + '/crear/', val);
   }
 
 
