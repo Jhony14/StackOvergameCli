@@ -19,9 +19,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
-    /*if (this.service.getToken != null) {
+    if (this.service.getToken()) {
       this.router.navigateByUrl('home');
-    }*/
+    }
 
     this.user = {
       Correo: '',
@@ -49,12 +49,11 @@ export class RegisterComponent implements OnInit {
       this.service.addUsuario(user).subscribe(data => {
         //   console.log(data);
         console.log("añadido");
+        this.router.navigateByUrl('auth');
       }, error => {
         console.log("****ERRORES*******")
         console.log(error.error);
       });
-      console.log("enviado");
-      console.log(user)
     } else {
       console.log("las contraseñas no son iguales")
     }

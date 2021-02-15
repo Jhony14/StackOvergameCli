@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
-    (click)="addComentario()" data-backdrop="static" data-keyboard="false">
+<button *ngIf="service.Correo" type="button" class="btn btn-primary float-right m-2" data-toggle="modal"
+    data-target="#exampleModal" (click)="addComentario()" data-backdrop="static" data-keyboard="false">
     Añadir comentario <i class="bi bi-plus"></i>
 </button>
 
@@ -35,16 +35,18 @@
         <tbody>
             <tr *ngFor="let item of comentarioData | paginate: { itemsPerPage: 7, currentPage: page }">
                 <td>{{item.ComentariosContenido}}</td>
-                <td>{{item.ComentariosFechaComentario}} </td>
-                <td>
+                <td>{{item.ComentariosFechaComentario}}</td>
+                <td *ngIf="service.userId==item.ComentariosUsuarioId">
                     <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
                         (click)="editComentario(item)" data-backdrop="static" data-keyboard="false"><i
                             class="bi bi-pencil-square"></i>
                     </button>
-                    <button type="button" (click)="deleteComentario(item.ComentariosId)" class=" btn btn-primary p-1 m-1">
+                    <button type="button" (click)="deleteComentario(item.ComentariosId)"
+                        class=" btn btn-primary p-1 m-1">
                         <i class="bi bi-trash"></i>
                     </button>
                 </td>
+                <td *ngIf="service.userId!=item.ComentariosUsuarioId"></td>
             </tr>
         </tbody>
     </table>

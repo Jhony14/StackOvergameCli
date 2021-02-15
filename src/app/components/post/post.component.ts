@@ -16,10 +16,13 @@ export class PostComponent implements OnInit {
   ActivateAddEditPost: boolean = false;
   post: any;
 
+
   constructor(public service: SharedService, public router: Router) { }
 
   ngOnInit(): void {
+
     this.refreshPostList();
+
   }
 
 
@@ -41,8 +44,8 @@ export class PostComponent implements OnInit {
     this.ActivateAddEditPost = true;
   }
 
-  deletePost(id){
-    this.service.deletePost(id).subscribe(data=>{
+  deletePost(id) {
+    this.service.deletePost(id).subscribe(data => {
       console.log(data)
       this.refreshPostList();
     }, error => {
