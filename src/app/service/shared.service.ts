@@ -76,7 +76,6 @@ export class SharedService {
     this.token = null;
     this.token_expires = null;
     this.Correo = null;
-    this.datoUsuario = null;
     this.userId = null;
     this.cookies.delete("token");
     console.log("%%%% LOG OUT CORRECTLY ")
