@@ -9,7 +9,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg);
+    background-image: url(../assets/Banner-header.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -19,23 +19,23 @@
     z-index: -1;
 }
 
+a {
+    font-size: 20px;
+}
+
+.active {
+    border-bottom: 3px solid #7c1fd3;
+    color: #7c1fd3 !important;
+    width: fit-content;
+}
+
 @media screen and (max-width: 800px) {
     .jumbotron {
         position: relative;
         background: none;
     }
     .jumbotron:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url(https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        opacity: 0.2;
-        z-index: -1;
+        height: 250px;
     }
     .jumbotron h1 {
         display: none;

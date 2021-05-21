@@ -65,8 +65,10 @@ export class SharedService {
   // Cookies para mantener sesion
   setToken(token: any) {
     this.cookies.set("token", token);
+    console.log("%%%% COOKIES ADD ")
   }
   getToken() {
+    console.log("%%%% USER GET");
     return this.cookies.get("token");
   }
 
@@ -74,18 +76,22 @@ export class SharedService {
     this.token = null;
     this.token_expires = null;
     this.Correo = null;
+    this.datoUsuario = null;
+    this.userId = null;
     this.cookies.delete("token");
+    console.log("%%%% LOG OUT CORRECTLY ")
   }
 
   public updateData(token) {
-    console.log(token);
+    console.log("%%%% UPDATE TOKEN ",token);
     this.token = token;
     this.errors = [];
-    localStorage.setItem('token', this.token);
+    this.setToken(token);
+    localStorage.setItem('token', this.token); //addtoken to local storage delete
     // decode the token to read the username and expiration timestamp
     const token_parts = this.token.split(/\./);
     const token_decoded = JSON.parse(window.atob(token_parts[1]));
-    console.log(token_decoded);
+    console.log("%%%% Token decoded ",token_decoded);
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.Correo = token_decoded.Correo;
     console.log(token_decoded.user_id);

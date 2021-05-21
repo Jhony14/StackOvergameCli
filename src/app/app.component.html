@@ -11,22 +11,29 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="post">Post <i
-                        class="bi bi-stickies-fill"></i></a>
+                <a class="nav-link" routerLinkActive="active" routerLink="post">
+                    Post
+                    <i class="bi bi-stickies-fill"></i>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="usuarios">Usuarios <i
-                        class="bi bi-people-fill"></i></a>
+                <a class="nav-link" routerLinkActive="active" routerLink="usuarios">
+                    Usuarios
+                    <i class="bi bi-people-fill"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" *ngIf="service.userId==1" routerLink="informes">Informe
-                    <i class="bi bi-info-circle"></i></a>
+                <a class="nav-link" routerLinkActive="active" *ngIf="service.userId==1" routerLink="informes">
+                    Informe
+                    <i class="bi bi-info-circle"></i>
+                </a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="auth">Login
-                    <i class="bi bi-door-open-fill"></i></a>
+                <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="auth">
+                    Login
+                    <i class="bi bi-door-open-fill"></i>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="register">Regístrate
@@ -37,11 +44,19 @@
                     {{service.Correo}} <i class="bi bi-person-circle"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" routerLinkActive="active" routerLink="No found">Editar perfil <i
-                                class="bi bi-file-person"></i></a></li>
+                    <li>
+                        <a class="dropdown-item" routerLinkActive="active" routerLink="No found">
+                            Editar perfil
+                            <i class="bi bi-file-person"></i>
+                        </a>
+                    </li>
                     <!--cambiar enlace-->
-                    <li><a class="dropdown-item" routerLinkActive="active" routerLink="auth">Logout <i
-                                class="bi bi-door-closed-fill"></i></a></li>
+                    <li>
+                        <a class="dropdown-item" routerLinkActive="active" routerLink="auth">
+                            Logout
+                            <i class="bi bi-door-closed-fill"></i>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
