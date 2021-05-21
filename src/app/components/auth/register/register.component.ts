@@ -12,13 +12,9 @@ export class RegisterComponent implements OnInit {
 
   public user: any;
 
-  //Datos de usuarios
-  public datoUsuario: any;
-
   constructor(public service: SharedService, public router: Router) { }
 
   ngOnInit(): void {
-    this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
     if (this.service.getToken()) {
       this.router.navigateByUrl('home');
     }

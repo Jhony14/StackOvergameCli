@@ -9,15 +9,12 @@ import { SharedService } from 'src/app/service/shared.service'
 export class AppComponent {
   title = 'stackovergamecli';
 
-  //Datos de usuarios
-  public datoUsuario: any;
-
   constructor(public service: SharedService) { }
 
   ngOnInit(): void {
-    this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
-    if (this.datoUsuario != null) {
-      this.service.login({ 'Correo': this.datoUsuario.Correo, 'password': this.datoUsuario.password });
+    console.log(this.service.getToken() + " token")
+    if (this.service.getToken()) {
+      this.service.updateData(this.service.getToken())
     }
   }
 

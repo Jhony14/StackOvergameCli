@@ -26,9 +26,7 @@ export class SharedService {
   // error messages received from the login attempt
   public errors: any = [];
 
-  //Datos de usuarios
-  public datoUsuario: any;
-
+  //the Id of the logged in user
   public userId: any;
 
   constructor(private http: HttpClient, private cookies: CookieService) {
@@ -42,11 +40,11 @@ export class SharedService {
     this.http.post(this.APIUrl + '/api-token-auth/', JSON.stringify(user), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
-        console.log(user);
+        console.log(user); // ver si viene el correo
       },
       err => {
         this.errors = err['error'];
-        console.log(err);
+        console.log( "Errores login: *******\n" + this.errors + "\n fin errores");
       }
     );
     return this.http.post(this.APIUrl + '/api-token-auth/', JSON.stringify(user), this.httpOptions)

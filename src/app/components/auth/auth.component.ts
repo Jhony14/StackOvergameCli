@@ -14,24 +14,12 @@ export class AuthComponent implements OnInit {
 
   public user: any;
 
-  //Datos de usuarios
-  public datoUsuario: any;
-
   constructor(public service: SharedService, public router: Router) { }
 
   ngOnInit(): void {
-    this.datoUsuario = JSON.parse(localStorage.getItem('usuario'));
-    if (this.datoUsuario == null) {
-      this.user = {
-        Correo: '',
-        password: ''
-      };
-    } else {
-      this.service.login({ 'Correo': this.datoUsuario.Correo, 'password': this.datoUsuario.password });
-      this.user = {
-        Correo: '',
-        password: ''
-      };
+    this.user = {
+      Correo: '',
+      password: ''
     }
   }
 
