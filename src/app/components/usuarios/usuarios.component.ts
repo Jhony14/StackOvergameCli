@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service'
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -22,9 +23,9 @@ export class UsuariosComponent implements OnInit {
   refreshUser() {
     this.service.getUsuarioList().subscribe(data => {
       this.userList = data;
-      console.log(data);
+      console.log("%% USERS LIST DATA", data);
     }, error => {
-      console.log(error);
+      console.log("ERRORS LIST USERS ", error);
     });
   }
 

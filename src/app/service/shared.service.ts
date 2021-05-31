@@ -44,7 +44,7 @@ export class SharedService {
       },
       err => {
         this.errors = err['error'];
-        console.log( "Errores login: *******\n" + this.errors + "\n fin errores");
+        console.log("Errores login: *******\n" + this.errors + "\n fin errores");
       }
     );
     return this.http.post(this.APIUrl + '/api-token-auth/', JSON.stringify(user), this.httpOptions)
@@ -82,7 +82,7 @@ export class SharedService {
   }
 
   public updateData(token) {
-    console.log("%%%% UPDATE TOKEN ",token);
+    console.log("%%%% UPDATE TOKEN ", token);
     this.token = token;
     this.errors = [];
     this.setToken(token);
@@ -90,7 +90,7 @@ export class SharedService {
     // decode the token to read the username and expiration timestamp
     const token_parts = this.token.split(/\./);
     const token_decoded = JSON.parse(window.atob(token_parts[1]));
-    console.log("%%%% Token decoded ",token_decoded);
+    console.log("%%%% Token decoded ", token_decoded);
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.Correo = token_decoded.Correo;
     console.log(token_decoded.user_id);
@@ -140,8 +140,6 @@ export class SharedService {
   deleteComentarios(id: number) {
     return this.http.delete(this.APIUrl + '/comentarios/' + id);
   }
-
-
 
   addUsuario(val: any) {
     return this.http.post(this.APIUrl + '/crear/', val);

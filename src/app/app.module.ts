@@ -56,7 +56,7 @@ import { AddEditComentariosComponent } from './components/post/add-edit-comentar
   ],
   providers: [
     SharedService,
-    CookieService
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })

@@ -50,3 +50,7 @@ div ul li a {
     font-size: 22px;
     margin-top: 10px;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: transparent;
+}
