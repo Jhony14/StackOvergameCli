@@ -19,7 +19,7 @@
             <a href="register "><small>¿No tienes una cuenta? Regístrate</small></a>
             <button (click)="login()" class="btn btn-primary col-5 m-2 float-right ">Iniciar sesion</button>
         </div>
-        <div class="row mx-auto " *ngIf="service.token ">
+        <div class="row mx-auto " *ngIf="service.token">
             <div><label class="col-12 mb-5">¿Desea cerrar sesion?</label></div>
             <button (click)="logout() " class="btn btn-primary mx-auto col-7 m-2 ">Cerrar sesion</button>
         </div>
