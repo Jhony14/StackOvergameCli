@@ -43,8 +43,8 @@ export class RegisterComponent implements OnInit {
       this.preview = image.base;
       console.log("%%% PREVIEW BASE 64 IMAGE ", this.preview)
     })
-    this.userProfile.push(profilePicture)
-    console.log("IMAGE PUSH TO userProfile", this.userProfile)
+    /*this.userProfile.push(profilePicture)
+    console.log("IMAGE PUSH TO userProfile", this.userProfile)*/
   }
 
 
@@ -68,17 +68,17 @@ export class RegisterComponent implements OnInit {
     } catch (e) {
       return null;
     }
-  })
+  });
 
 
   register() {
     try {
       const userFormData = new FormData();
-      this.userProfile.forEach(element => {
+      /*this.userProfile.forEach(element => {
         console.log("%%% ARCHIVO ", element);
         userFormData.append('Imagenperfil', element); //files?
         console.log("%%% USER FORM DATA ",userFormData)
-      });
+      });*/
 
 
       if (this.user.password1 === this.user.password2) {

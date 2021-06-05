@@ -17,19 +17,13 @@
                 <label class="col-4">Correo:</label>
                 <input class="col-8" type="email" name="register-correo" [(ngModel)]="user.Correo" required>
             </div>
-            <div class="form-group">
-                <label class="col-4">Contraseña:</label>
-                <input class="col-8" type="password" name="register-password" [(ngModel)]="user.password1" required>
-            </div>
-            <div class="form-group">
-                <label class="col-4">Vuelva a introducir la contraseña:</label>
-                <input class="col-8" type="password" name="register-password" [(ngModel)]="user.password2" required>
-            </div>
-            <div class="form-group">
+            <div class="form-group" style="max-width: 540px;">
                 <label class="col-4">Foto de perfil:</label>
-                <input class="col-8" type="file" name="register-imagen" [(ngModel)]="user.Imagenperfil" required>
+                <input class="col-8" type="file" (change)="uploadProfilePicture($event)">
+                <img *ngIf="preview" [src]="preview" width="450px" alt="">
+                <!--accept="image/*" name="register-imagen" [(ngModel)]="user.Imagenperfil" required-->
             </div>
-            <button (click)="register()" class="btn btn-primary col-5 m-2 float-right">Registrarse</button>
+            <button (click)="updateUser()" class="btn btn-primary col-5 m-2 float-right">Actualizar</button>
         </div>
     </form>
 </div>

@@ -28,7 +28,7 @@
             <div class="form-group" style="max-width: 540px;">
                 <label class="col-4">Foto de perfil:</label>
                 <input class="col-8" type="file" (change)="uploadProfilePicture($event)">
-                <img *ngIf="preview" [src]="preview" alt="">
+                <img *ngIf="preview" [src]="preview" width="450px" alt="">
                 <!--accept="image/*" name="register-imagen" [(ngModel)]="user.Imagenperfil" required-->
             </div>
             <button (click)="register()" class="btn btn-primary col-5 m-2 float-right">Registrarse</button>

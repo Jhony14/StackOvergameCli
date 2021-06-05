@@ -145,5 +145,9 @@ export class SharedService {
     return this.http.post(this.APIUrl + '/crear/', val);
   }
 
+  updateUsuario(val: any) {
+    return this.http.put(this.APIUrl + '/usuario/', val);
+  }
+
 
 }

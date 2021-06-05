@@ -25,14 +25,13 @@
                 </li>
                 <li class="nav-item menu__group">
                     <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
-                        *ngIf="service.userId==1" routerLink="noticias">
+                        routerLink="noticias">
                         Noticias
-                        <i class="bi bi-info-circle"></i>
+                        <i class="bi bi-newspaper"></i>
                     </a>
                 </li>
                 <li class="nav-item menu__group">
-                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
-                        *ngIf="service.userId==1" routerLink="guias">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active" routerLink="guias">
                         Recursos
                         <i class="bi bi-info-circle"></i>
                     </a>
@@ -55,7 +54,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li class="menu__group">
                             <a class="dropdown-item menu__link r-link text-underlined" routerLinkActive="active"
-                                routerLink="No found">
+                                routerLink="edit-profile">
                                 Editar perfil <img style="margin-left: 8px;" src={{imageProfile}} alt="image"
                                     width="25px" height="25px">
                             </a>
@@ -78,8 +77,8 @@
                     </a>
                 </li>
                 <li class="nav-item menu__group">
-                    <a class="nav-link r-link menu__link text-underlined" routerLinkActive="active" *ngIf="!service.token"
-                        routerLink="register">
+                    <a class="nav-link r-link menu__link text-underlined" routerLinkActive="active"
+                        *ngIf="!service.token" routerLink="register">
                         Regístrate
                         <i class="bi bi-person-plus-fill"></i>
                     </a>

@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'informes', component: InformesComponent },
-  { path: 'edit-show/:id', component: EditShowUserComponent },
+  { path: 'edit-profile', component: EditShowUserComponent },
   { path: 'show-post/:id', component: ShowPostComponent },
   { path: 'guias', component: GuideComponent },
   { path: 'show-post/:id', component: ShowGuideComponent },
