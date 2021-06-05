@@ -20,10 +20,11 @@
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" routerLink="usuarios">
                     Usuarios
-                    <i class="bi bi-people-fill"></i></a>
+                    <i class="bi bi-people-fill"></i>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" *ngIf="service.userId==1" routerLink="informes">
+                <a class="nav-link" routerLinkActive="active" *ngIf="service.userId==1" routerLink="informes">rexykido  
                     Informe
                     <i class="bi bi-info-circle"></i>
                 </a>
@@ -38,7 +39,8 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="register">Regístrate
-                    <i class="bi bi-person-plus-fill"></i></a>
+                    <i class="bi bi-person-plus-fill"></i>
+                </a>
             </li>
             <li class="nav-item dropdown d-flex">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"

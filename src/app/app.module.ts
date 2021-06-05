@@ -25,6 +25,14 @@ import { InformesComponent } from './components/informes/informes.component';
 import { EditShowUserComponent } from './components/usuarios/edit-show-user/edit-show-user.component';
 import { AddEditPostComponent } from './components/post/add-edit-post/add-edit-post.component';
 import { AddEditComentariosComponent } from './components/post/add-edit-comentarios/add-edit-comentarios.component';
+import { GuideComponent } from './components/guide/guide.component';
+import { NewsComponent } from './components/news/news.component';
+import { ViewComponent } from './components/news/view/view.component';
+import { AddEditComponent } from './components/news/add-edit/add-edit.component';
+import { ShowGuideComponent } from './components/guide/show-guide/show-guide.component';
+import { AddEditGuideComponent } from './components/guide/add-edit-guide/add-edit-guide.component';
+
+
 
 
 @NgModule({
@@ -43,6 +51,13 @@ import { AddEditComentariosComponent } from './components/post/add-edit-comentar
     EditShowUserComponent,
     AddEditPostComponent,
     AddEditComentariosComponent,
+    GuideComponent,
+    NewsComponent,
+    ViewComponent,
+    AddEditComponent,
+    ShowGuideComponent,
+    AddEditGuideComponent,
+
   ],
   imports: [
     BrowserModule,
