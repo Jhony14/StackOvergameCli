@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component'
 import { PostComponent } from './components/post/post.component'
+import { GuideComponent } from './components/guide/guide.component'
 import { ComentariosComponent } from './components/post/comentarios/comentarios.component'
 import { AuthComponent } from './components/auth/auth.component'
 import { UsuariosComponent } from './components/usuarios/usuarios.component'
@@ -10,7 +11,11 @@ import { ErrorComponent } from './components/error/error.component'
 import { RegisterComponent } from './components/auth/register/register.component'
 import { InformesComponent } from './components/informes/informes.component'
 import { ShowPostComponent } from './components/post/show-post/show-post.component'
+import { ShowGuideComponent } from './components/guide/show-guide/show-guide.component'
 import { EditShowUserComponent } from './components/usuarios/edit-show-user/edit-show-user.component'
+import { NewsComponent } from './components/news/news.component';
+import { ViewComponent } from './components/news/view/view.component'
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +28,10 @@ const routes: Routes = [
   { path: 'informes', component: InformesComponent },
   { path: 'edit-show/:id', component: EditShowUserComponent },
   { path: 'show-post/:id', component: ShowPostComponent },
+  { path: 'guias', component: GuideComponent },
+  { path: 'show-post/:id', component: ShowGuideComponent },
+  { path: 'noticias', component: NewsComponent },
+  { path: 'show-noticia/:id', component: ViewComponent },
   { path: '**', component: ErrorComponent },
 ];
 

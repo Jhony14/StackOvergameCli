@@ -1,72 +1,99 @@
-<div class="jumbotron jumbotron-fluid text-center">
-    <h1 class="display-1">Stack Overgame</h1>
+<div class="page">
+
+    <nav class="mx-auto navbar navbar-expand-lg navbar-light fixed-top page__menu page__custom-settings menu">
+
+        <a class="navbar-brand menu__link r-link text-underlined" routerLinkActive="active" routerLink="home">Stack
+            Overgame</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto menu__list r-list">
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active" routerLink="post">
+                        Post
+                        <i class="bi bi-stickies-fill"></i>
+                    </a>
+                </li>
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
+                        routerLink="usuarios">
+                        Usuarios
+                        <i class="bi bi-people-fill"></i>
+                    </a>
+                </li>
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
+                        *ngIf="service.userId==1" routerLink="noticias">
+                        Noticias
+                        <i class="bi bi-info-circle"></i>
+                    </a>
+                </li>
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
+                        *ngIf="service.userId==1" routerLink="guias">
+                        Recursos
+                        <i class="bi bi-info-circle"></i>
+                    </a>
+                </li>
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
+                        *ngIf="service.userId==1" routerLink="informes">
+                        Informe
+                        <i class="bi bi-info-circle"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown d-flex menu__group ">
+                    <a class="nav-link dropdown-toggle menu__link r-link text-underlined" id="navbarDropdownMenuLink"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="service.Correo">
+                        {{service.Correo}} <img src={{imageProfile}} alt="image" width="25px" height="25px">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="menu__group">
+                            <a class="dropdown-item menu__link r-link text-underlined" routerLinkActive="active"
+                                routerLink="No found">
+                                Editar perfil <img src={{imageProfile}} alt="image" width="25px" height="25px">
+                            </a>
+                        </li>
+                        <!--cambiar enlace-->
+                        <li class="menu__group">
+                            <a class="dropdown-item menu__link r-link text-underlined" routerLinkActive="active"
+                                routerLink="auth">
+                                Logout
+                                <i class="bi bi-door-closed-fill"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
+                        *ngIf="!service.token" routerLink="auth">
+                        Login
+                        <i class="bi bi-door-open-fill"></i>
+                    </a>
+                </li>
+                <li class="nav-item menu__group menu__link r-link text-underlined">
+                    <a class="nav-link" routerLinkActive="active" *ngIf="!service.token"
+                        routerLink="register">Regístrate
+                        <i class="bi bi-person-plus-fill"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
 </div>
 
-<nav class="mx-auto navbar navbar-expand-lg navbar-light fixed-top">
 
-    <a class="navbar-brand" routerLinkActive="active" routerLink="home">Stack Overgame</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="post">
-                    Post
-                    <i class="bi bi-stickies-fill"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="usuarios">
-                    Usuarios
-                    <i class="bi bi-people-fill"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" *ngIf="service.userId==1" routerLink="informes">rexykido  
-                    Informe
-                    <i class="bi bi-info-circle"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="auth">
-                    Login
-                    <i class="bi bi-door-open-fill"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" *ngIf="!service.token" routerLink="register">Regístrate
-                    <i class="bi bi-person-plus-fill"></i>
-                </a>
-            </li>
-            <li class="nav-item dropdown d-flex">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" *ngIf="service.Correo">
-                    {{service.Correo}} <img src={{imageProfile}} alt="image" width="25px">
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                        <a class="dropdown-item" routerLinkActive="active" routerLink="No found">
-                            Editar perfil <img src={{imageProfile}} alt="image" width="25px">
-                        </a>
-                    </li>
-                    <!--cambiar enlace-->
-                    <li>
-                        <a class="dropdown-item" routerLinkActive="active" routerLink="auth">
-                            Logout
-                            <i class="bi bi-door-closed-fill"></i>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-<router-outlet></router-outlet>
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 
 <footer class="footer mt-auto py-5">
     <div class="container text-center">
