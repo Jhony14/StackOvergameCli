@@ -45,17 +45,19 @@
                     </a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto menu__list r-list">
                 <li class="nav-item dropdown d-flex menu__group ">
                     <a class="nav-link dropdown-toggle menu__link r-link text-underlined" id="navbarDropdownMenuLink"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="service.Correo">
-                        {{service.Correo}} <img src={{imageProfile}} alt="image" width="25px" height="25px">
+                        {{service.Correo}} <img style="margin-left: 8px;" src={{imageProfile}} alt="image" width="25px"
+                            height="25px">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li class="menu__group">
                             <a class="dropdown-item menu__link r-link text-underlined" routerLinkActive="active"
                                 routerLink="No found">
-                                Editar perfil <img src={{imageProfile}} alt="image" width="25px" height="25px">
+                                Editar perfil <img style="margin-left: 8px;" src={{imageProfile}} alt="image"
+                                    width="25px" height="25px">
                             </a>
                         </li>
                         <!--cambiar enlace-->
@@ -75,9 +77,10 @@
                         <i class="bi bi-door-open-fill"></i>
                     </a>
                 </li>
-                <li class="nav-item menu__group menu__link r-link text-underlined">
-                    <a class="nav-link" routerLinkActive="active" *ngIf="!service.token"
-                        routerLink="register">Regístrate
+                <li class="nav-item menu__group">
+                    <a class="nav-link r-link menu__link text-underlined" routerLinkActive="active" *ngIf="!service.token"
+                        routerLink="register">
+                        Regístrate
                         <i class="bi bi-person-plus-fill"></i>
                     </a>
                 </li>

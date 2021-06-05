@@ -24,12 +24,12 @@ export class RegisterComponent implements OnInit {
     }
 
     this.user = {
-      Correo: 'Test3@gmail.com',
-      password1: 'Test',
-      password2: 'Test',
-      Nombre: 'Test',
-      Apellido1: 'TEst',
-      Apellido2: 'test',
+      Correo: '',
+      password1: '',
+      password2: '',
+      Nombre: '',
+      Apellido1: '',
+      Apellido2: '',
       // Imagenperfil: null,
     }
 

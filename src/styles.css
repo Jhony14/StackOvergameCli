@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+    background-color: #4630AB !important;
+    border: #2B0548 !important;
+}
+
+.dropdown-menu {
+    background-color: #4630AB !important;
+}
