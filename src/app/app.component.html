@@ -97,14 +97,16 @@
     <router-outlet></router-outlet>
 </div>
 
-<footer class="footer mt-auto py-5">
+<footer class="footer mt-auto fixed-bottom" *ngIf="!aceptCookie" >
     <div class="container text-center">
         <div class="card">
             <div class="card-body">
-                <span class="text-muted">Stack Overgame &copy; MIT licensed BY Jhonatan Arteaga, 2021</span>
+                <span class="text-muted">Este sitio web utiliza cookies para mejorar su experiencia de navegación. Si
+                    quieres más información, consulta la política de cookies de nuestra página web</span>
                 <span class="text-muted">
-                    <a href="https://github.com/Jhony14/StackOvergameCli"> CLIENT</a>
-                    <a href="https://github.com/Jhony14/StackOvergameServer"> SERVER</a>
+                    <a href="cookies-law"> política de cookies </a>
+                    <br>
+                    <a (click)="aceptCookies()" class=" btn btn-primary"> Aceptar</a>
                 </span>
             </div>
         </div>
@@ -116,7 +118,7 @@
 <div class="my-5">
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    <footer class="footer text-center text-lg-start text-white" style="background-color: #1c2331">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
             <!-- Left -->
@@ -202,7 +204,7 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Contact</h6>
+                        <h6 class="text-uppercase fw-bold">Contacto</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #7c4dff; height: 2px" />
                         <p><i class="fas fa-home mr-3"></i>Valencia, España</p>

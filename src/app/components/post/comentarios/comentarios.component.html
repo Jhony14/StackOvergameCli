@@ -22,33 +22,25 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Comentario</th>
-                <th>Fecha del comentario</th>
-                <th>Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of comentarioData | paginate: { itemsPerPage: 7, currentPage: page }">
-                <td>{{item.ComentariosContenido}}</td>
-                <td>{{item.ComentariosFechaComentario}}</td>
-                <td *ngIf="service.userId==item.ComentariosUsuarioId">
-                    <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
-                        (click)="editComentario(item)" data-backdrop="static" data-keyboard="false"><i
-                            class="bi bi-pencil-square"></i>
-                    </button>
-                    <button type="button" (click)="deleteComentario(item.ComentariosId)"
-                        class=" btn btn-primary p-1 m-1">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>
-                <td *ngIf="service.userId!=item.ComentariosUsuarioId"></td>
-            </tr>
-        </tbody>
-    </table>
+<br><br><br>
+<div class="card">
+    <div class="card-header text-center">
+        <h3 class="font-weight-bold">Comentarios</h3>
+    </div>
+    <div *ngFor="let item of comentarioData | paginate: { itemsPerPage: 10, currentPage: page }">
+        <div class="card-body" style="border: 1px solid black;">
+            <p class="card-text text-justify">{{item.ComentariosContenido}}</p>
+            <p class="card-text text-right">{{item.ComentariosFechaComentario}}</p>
+        </div>
+        <div class="card-footer text-muted" *ngIf="service.userId==item.ComentariosUsuarioId">
+            <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
+                (click)="editComentario(item)" data-backdrop="static" data-keyboard="false"><i
+                    class="bi bi-pencil-square"></i>
+            </button>
+            <button type="button" (click)="deleteComentario(item.ComentariosId)" class=" btn btn-primary p-1 m-1">
+                <i class="bi bi-trash"></i>
+            </button>
+        </div>
+    </div>
 </div>
 <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

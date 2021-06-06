@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
     <!-- Button trigger modal -->
     <button *ngIf="service.Correo" type="button" class="btn btn-primary float-right m-2" data-toggle="modal"
         data-target="#exampleModal" (click)="addPost()" data-backdrop="static" data-keyboard="false">
@@ -22,34 +22,31 @@
             </div>
         </div>
     </div>
+    <br><br><br>
+    <div class="card text-center" *ngFor="let dataitem of PostList | paginate: { itemsPerPage: 10, currentPage: page }">
+        <div class="card-header">
+            Publicado el día: {{dataitem.PostFechaPublicacion}}
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Titulo</th>
-                <th>Fecha publicación</th>
-                <th>Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dataitem of PostList | paginate: { itemsPerPage: 7, currentPage: page }">
-                <td>
-                    <a [routerLink]="['/show-post',dataitem.PostId]">{{dataitem.PostTitulo}}</a>
-                </td>
-                <td>{{dataitem.PostFechaPublicacion}}</td>
-                <td *ngIf="service.userId==dataitem.PostUsuarioId">
-                    <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
-                        (click)="editPost(dataitem)" data-backdrop="static" data-keyboard="false"><i
-                            class="bi bi-pencil-square"></i>
-                    </button>
-                    <button type="button" (click)="deletePost(dataitem.PostId)" class=" btn btn-primary p-1 m-1">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>
-                <td *ngIf="service.userId!=dataitem.PostUsuarioId"></td>
-            </tr>
-        </tbody>
-    </table>
+        </div>
+        <div class="card-body">
+            <a [routerLink]="['/show-post',dataitem.PostId]">
+                <h5 class="card-title">{{dataitem.PostTitulo}}</h5>
+            </a>
+
+        </div>
+        <div class="card-footer" *ngIf="service.userId==dataitem.PostUsuarioId">
+            <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
+                (click)="editPost(dataitem)" data-backdrop="static" data-keyboard="false"><i
+                    class="bi bi-pencil-square"></i>
+            </button>
+            <button type="button" (click)="deletePost(dataitem.PostId)" class=" btn btn-primary p-1 m-1">
+                <i class="bi bi-trash"></i>
+            </button>
+        </div>
+    </div>
+
+    <br>
+
     <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente">
     </pagination-controls>
 </div>
