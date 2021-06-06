@@ -1,4 +1,4 @@
-<div class="card text-center" *ngFor="let item of PostData">
+<div class="card text-center" *ngFor="let item of PostData" id="htmlData">
     <div class="card-header">
         <h4 class="font-weight-bold"> {{item.GuideTitulo}}</h4>
     </div>
@@ -6,7 +6,7 @@
         <p class="card-text text-justify">{{item.GuideContenido}}</p>
         <p class="card-text text-right">{{item.GuideFechaPublicacion}}</p>
     </div>
-    <div class="card-footer text-muted" *ngIf="service.userId==item.PostUsuarioId">
+    <div class="card-footer text-muted" style="display: none;" *ngIf="service.userId==item.PostUsuarioId">
         <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal" (click)="editPost(item)"
             data-backdrop="static" data-keyboard="false"><i class="bi bi-pencil-square"></i>
         </button>
@@ -15,4 +15,6 @@
         </button>
     </div>
 </div>
+<br><br>
+<button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">Download PDF</button>
 <br><br>

@@ -52,7 +52,7 @@ export class InformesComponent implements OnInit {
       doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
       return doc;
     }).then((docResult) => {
-      docResult.save(`${new Date().toISOString()}_informe.pdf`);
+      docResult.save(`${new Date().toISOString()}_guia.pdf`);
     });
   }
 
