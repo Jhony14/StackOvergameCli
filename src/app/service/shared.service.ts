@@ -22,6 +22,7 @@ export class SharedService {
 
   // the username of the logged in user  username=correo
   public Correo: string;
+  public userName: string;
 
   // error messages received from the login attempt
   public errors: any = [];
@@ -40,7 +41,7 @@ export class SharedService {
     this.http.post(this.APIUrl + '/api-token-auth/', JSON.stringify(user), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
-        console.log(user); // ver si viene el correo
+        console.log(data);
       },
       err => {
         this.errors = err['error'];
@@ -86,7 +87,6 @@ export class SharedService {
     this.token = token;
     this.errors = [];
     this.setToken(token);
-    localStorage.setItem('token', this.token); //addtoken to local storage delete
     // decode the token to read the username and expiration timestamp
     const token_parts = this.token.split(/\./);
     const token_decoded = JSON.parse(window.atob(token_parts[1]));

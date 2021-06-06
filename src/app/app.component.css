@@ -139,8 +139,8 @@ li.nav-item.menu__group {
 
 .page__custom-settings {
     --menuBackgroundColor: #4630AB;
-    --menuLinkColor: #DFAEFF;
-    --menuLinkColorUnactive: #2B0548;
+    --menuLinkColor: #FFF;
+    --menuLinkColorUnactive: #DFAEFF;
     --menuLinkOutlineOffset: -.5rem;
 }
 

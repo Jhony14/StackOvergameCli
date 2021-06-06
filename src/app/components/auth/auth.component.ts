@@ -35,10 +35,13 @@ export class AuthComponent implements OnInit {
     const user = { 'Correo': this.user.Correo, 'password': this.user.password };
     this.service.login(user).subscribe(data => {
       this.service.setToken(data.token);
+
+        this.router.navigateByUrl('home');
+
+    }, error => {
+      console.log("%%% ERROR LOGIN", error);
     });
-    if (!this.service.errors) {
-      this.router.navigateByUrl('home');
-    }
+
     /*
     if (!this.service.errors) {
       localStorage.setItem('usuario', JSON.stringify(this.user));

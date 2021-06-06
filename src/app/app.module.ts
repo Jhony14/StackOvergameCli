@@ -31,6 +31,7 @@ import { ViewComponent } from './components/news/view/view.component';
 import { AddEditComponent } from './components/news/add-edit/add-edit.component';
 import { ShowGuideComponent } from './components/guide/show-guide/show-guide.component';
 import { AddEditGuideComponent } from './components/guide/add-edit-guide/add-edit-guide.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 
 
@@ -68,6 +69,8 @@ import { AddEditGuideComponent } from './components/guide/add-edit-guide/add-edi
     NgbModule,
     NgxPaginationModule,
     FileUploadModule,
+    FroalaEditorModule,
+    FroalaViewModule,
   ],
   providers: [
     SharedService,

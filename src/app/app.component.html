@@ -33,7 +33,7 @@
                 <li class="nav-item menu__group">
                     <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active" routerLink="guias">
                         Recursos
-                        <i class="bi bi-info-circle"></i>
+                        <i class="bi bi-card-checklist"></i>
                     </a>
                 </li>
                 <li class="nav-item menu__group">
@@ -70,17 +70,17 @@
                     </ul>
                 </li>
                 <li class="nav-item menu__group">
-                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
-                        *ngIf="!service.token" routerLink="auth">
-                        Login
-                        <i class="bi bi-door-open-fill"></i>
-                    </a>
-                </li>
-                <li class="nav-item menu__group">
                     <a class="nav-link r-link menu__link text-underlined" routerLinkActive="active"
                         *ngIf="!service.token" routerLink="register">
                         Regístrate
                         <i class="bi bi-person-plus-fill"></i>
+                    </a>
+                </li>
+                <li class="nav-item menu__group">
+                    <a class="nav-link menu__link r-link text-underlined" routerLinkActive="active"
+                        *ngIf="!service.token" routerLink="auth">
+                        Login
+                        <i class="bi bi-door-open-fill"></i>
                     </a>
                 </li>
             </ul>
@@ -110,3 +110,124 @@
         </div>
     </div>
 </footer>
+
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="my-5">
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Sigueme en mis redes sociales</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://twitter.com/Little_Jhony14" class="text-white me-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/little_jhony14/" class="text-white me-4">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jhonatan-leonardo-arteaga-yucra-4888b6196/"
+                    class="text-white me-4">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Jhony14" class="text-white me-4">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold">Stack Overgame</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            Tienes dudas al jugar
+                        </p>
+                        <p>
+                            Stack Overgame es tu lugar
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Recursos</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a routerLink="guias" class="text-white">Guias</a>
+                        </p>
+                        <p>
+                            <a routerLink="noticias" class="text-white">Noticias</a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Links</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a routerLink="post" class="text-white">Publicaciones</a>
+                        </p>
+                        <p>
+                            <a routerLink="usuarios" class="text-white">Usuarios</a>
+                        </p>
+                        <p>
+                            <a routerLink="cookies-law" class="text-white">Politica de cookies</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Contact</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p><i class="fas fa-home mr-3"></i>Valencia, España</p>
+                        <p><i class="fas fa-envelope mr-3"></i>
+                            <a style="color: white;" href="mailto:jhonyart14@gmail.com">jhonyart14@gmail.com</a>
+                        </p>
+                        <p><i class="fas fa-phone mr-3"></i> +34 612448336</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            <span class="text-muted">Stack Overgame &copy; MIT licensed BY Jhonatan Arteaga, 2021</span>
+            <span class="text-muted">
+                <a href="https://github.com/Jhony14/StackOvergameCli"> CLIENT</a>
+                <a href="https://github.com/Jhony14/StackOvergameServer"> SERVER</a>
+            </span>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</div>
+<!-- End of .container -->

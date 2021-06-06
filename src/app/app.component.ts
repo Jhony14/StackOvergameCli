@@ -25,7 +25,7 @@ export class AppComponent {
 
   getProfileImage() {
     this.service.getUsuario(this.service.userId).subscribe(data => {
-      console.log("%% USER IMAGE ", data[0].Imagenperfil);
+      //console.log("%% USER IMAGE ", data[0].Imagenperfil);
       this.imageProfile = data[0].Imagenperfil;
     }, error => {
       console.log("ERROR IMAGE USER ", error);

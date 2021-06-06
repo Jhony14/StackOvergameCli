@@ -4,17 +4,21 @@
             <div class="form-group ">
                 <label class="col-4 ">Correo:</label>
                 <input class="col-8 " type="email " name="login-username " [(ngModel)]="user.Correo " autofocus>
-                <span *ngFor="let error of service.errors.Correo "><br />
-          {{ error }}</span>
+                <small class="error" *ngFor="let error of service.errors.Correo ">
+                    <br />
+                    {{ error }}
+                </small>
             </div>
             <div class="form-group ">
                 <label class="col-4 ">Contraseña:</label>
                 <input class="col-8 " type="password" name="login-password " [(ngModel)]="user.password " required>
-                <span *ngFor="let error of service.errors.password "><br />
-          {{ error }}</span>
+                <small class="error" *ngFor="let error of service.errors.password ">
+                    <br />
+                    {{ error }}
+                </small>
             </div>
             <div>
-                <span *ngFor="let error of service.errors.non_field_errors ">{{ error }}<br /></span>
+                <small class="error" *ngFor="let error of service.errors.non_field_errors ">{{ error }}<br /></small>
             </div>
             <a href="register "><small>¿No tienes una cuenta? Regístrate</small></a>
             <button (click)="login()" class="btn btn-primary col-5 m-2 float-right ">Iniciar sesion</button>
