@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   public user: any;
   public userProfile: any = [];
   public preview: string;
+  error: string;
 
   constructor(public service: SharedService, public router: Router, private sanitizer: DomSanitizer) { }
 
@@ -80,6 +81,8 @@ export class RegisterComponent implements OnInit {
         console.log("%%% USER FORM DATA ",userFormData)
       });*/
 
+      this.error = "";
+
 
       if (this.user.password1 === this.user.password2) {
         const user = {
@@ -97,14 +100,16 @@ export class RegisterComponent implements OnInit {
           //   console.log(data);
           console.log("ADD NEW USER ", data);
           this.router.navigateByUrl('auth');
-        }, error => {
-          console.log("%%% ERROR ADD USER", error);
+        }, err => {
+          console.log("%%% ERROR ADD USER", err);
+          this.error += "Rellene todos los campos \n";
         });
       } else {
-        console.log("las contraseñas no son iguales")
+        console.log("las contraseñas no son iguales");
+        this.error = "las contraseñas no son iguales \n";
       }
     } catch (error) {
-      console.log("%%% ERROR REGISTER NEW USER ", error)
+      console.log("%%% ERROR REGISTER NEW USER ", error);
     }
   }
 

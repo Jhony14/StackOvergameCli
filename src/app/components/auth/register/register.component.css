@@ -19,3 +19,7 @@
 .drop-file-over{
   background: #333;
 }
+
+.error{
+  color: red;
+}

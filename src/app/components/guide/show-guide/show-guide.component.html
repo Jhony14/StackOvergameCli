@@ -1,1 +1,18 @@
-<p>show-guide works!</p>
+<div class="card text-center" *ngFor="let item of PostData">
+    <div class="card-header">
+        <h4 class="font-weight-bold"> {{item.GuideTitulo}}</h4>
+    </div>
+    <div class="card-body">
+        <p class="card-text text-justify">{{item.GuideContenido}}</p>
+        <p class="card-text text-right">{{item.GuideFechaPublicacion}}</p>
+    </div>
+    <div class="card-footer text-muted" *ngIf="service.userId==item.PostUsuarioId">
+        <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal" (click)="editPost(item)"
+            data-backdrop="static" data-keyboard="false"><i class="bi bi-pencil-square"></i>
+        </button>
+        <button type="button" (click)="deletePost(item.NewsId)" class=" btn btn-primary p-1 m-1">
+            <i class="bi bi-trash"></i>
+        </button>
+    </div>
+</div>
+<br><br>

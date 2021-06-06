@@ -30,10 +30,10 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditShowUserComponent },
   { path: 'show-post/:id', component: ShowPostComponent },
   { path: 'guias', component: GuideComponent },
-  { path: 'show-post/:id', component: ShowGuideComponent },
+  { path: 'show-guia/:id', component: ShowGuideComponent },
   { path: 'noticias', component: NewsComponent },
   { path: 'cookies-law', component: CookiesComponent },
-  { path: 'show-noticia/:id', component: ViewComponent },
+  { path: 'show-noticias/:id', component: ViewComponent },
   { path: '**', component: ErrorComponent },
 ];
 

@@ -1,1 +1,27 @@
-<p>news works!</p>
+<div class="card text-center mt-5"
+    *ngFor="let dataitem of PostList | paginate: { itemsPerPage: 10, currentPage: page }">
+    <div class="card-header">
+        Publicado el día: {{dataitem.NewsFechaPublicacion}}
+
+    </div>
+    <div class="card-body">
+        <a [routerLink]="['/show-noticias',dataitem.NewsId]">
+            <h5 class="card-title">{{dataitem.NewsTitulo}}</h5>
+        </a>
+
+    </div>
+    <div class="card-footer" *ngIf="service.userId==dataitem.PostUsuarioId">
+        <button class="btn btn-primary p-1 m-1" data-toggle="modal" data-target="#exampleModal"
+            (click)="editPost(dataitem)" data-backdrop="static" data-keyboard="false"><i
+                class="bi bi-pencil-square"></i>
+        </button>
+        <button type="button" (click)="deletePost(dataitem.NewsId)" class=" btn btn-primary p-1 m-1">
+            <i class="bi bi-trash"></i>
+        </button>
+    </div>
+</div>
+
+<br>
+
+<pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente">
+</pagination-controls>

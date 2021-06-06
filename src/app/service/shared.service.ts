@@ -149,5 +149,21 @@ export class SharedService {
     return this.http.put(this.APIUrl + '/usuario/', val);
   }
 
+  getGuideList(): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/guideList/');
+  }
+
+  getGuide(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/guide/' + id);
+  }
+
+  getNewsList(): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/newsList/');
+  }
+
+  getNews(id: number): Observable<any[]> {
+    return this.http.get<any[]>(this.APIUrl + '/news/' + id);
+  }
+
 
 }
