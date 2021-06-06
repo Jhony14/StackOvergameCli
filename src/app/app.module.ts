@@ -32,6 +32,7 @@ import { AddEditComponent } from './components/news/add-edit/add-edit.component'
 import { ShowGuideComponent } from './components/guide/show-guide/show-guide.component';
 import { AddEditGuideComponent } from './components/guide/add-edit-guide/add-edit-guide.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { CookiesComponent } from './components/cookies/cookies.component';
 
 
 
@@ -58,6 +59,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     AddEditComponent,
     ShowGuideComponent,
     AddEditGuideComponent,
+    CookiesComponent,
 
   ],
   imports: [

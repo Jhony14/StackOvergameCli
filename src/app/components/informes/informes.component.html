@@ -12,10 +12,10 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of userList">
-                    <td>{{item.Nombre}}</td>
-                    <td>{{item.Apellido1}}</td>
-                    <td>{{item.Apellido2}}</td>
-                    <td>{{item.Correo}}</td>
+                    <td *ngIf="item.Nombre!='Admin'">{{item.Nombre}}</td>
+                    <td *ngIf="item.Nombre!='Admin'">{{item.Apellido1}}</td>
+                    <td *ngIf="item.Nombre!='Admin'">{{item.Apellido2}}</td>
+                    <td *ngIf="item.Nombre!='Admin'">{{item.Correo}}</td>
                 </tr>
             </tbody>
         </table>

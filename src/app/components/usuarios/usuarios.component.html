@@ -1,16 +1,18 @@
-<div class="container">
-    <table class="table table-bordered">
-        <tr>
-            <td>Nombre</td>
-            <td>Primer apellido</td>
-            <td>Segundo apellido</td>
-        </tr>
-        <tr *ngFor="let item of userList | paginate: { itemsPerPage: 7, currentPage: page }">
-            <td>{{item.Nombre}}</td>
-            <td>{{item.Apellido1}}</td>
-            <td>{{item.Apellido2}}</td>
-        </tr>
-    </table>
+<div class="">
+    <h1 class="text-center font-weight-bold">Usuarios</h1>
+    <br>
+    <div class="flex-container p-2">
+        <div class="m-2" *ngFor="let item of userList | paginate: { itemsPerPage: 12, currentPage: page }">
+            <div class="card fixHeight" style="width: 18rem;" *ngIf="item.Nombre!='Admin'">
+                <img class="card-img-top" [src]=item.Imagenperfil alt="Image profile">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre: {{item.Nombre}}</h5>
+                    <p class="card-text">Apellido: {{item.Apellido1}} {{item.Apellido2}}</p>
+                    <p class="card-text">Correo: {{item.Correo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente">
     </pagination-controls>
 </div>

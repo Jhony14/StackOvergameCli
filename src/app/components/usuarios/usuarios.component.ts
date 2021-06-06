@@ -30,6 +30,3 @@ export class UsuariosComponent implements OnInit {
   }
 
 }
-
-
-/* https://stackoverflow.com/questions/52258557/seve-picture-dataimage-jpegbase64-with-python */
